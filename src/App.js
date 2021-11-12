@@ -6,7 +6,7 @@ import TextForm from './Component/TextForm';
 import React, { useState } from 'react'
 import Alert from './Component/Alert';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -56,13 +56,10 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3">
         <Switch>
-          <Route exact path="/About">
-            <About mode={mode} />
-          </Route>
+          <Route exact path="/About" component={()=><About mode={mode} />}/>
           
-          <Route exact path="/">
-            <TextForm heading="TextForm" mode={mode} />
-          </Route>
+          <Route exact path="/" component = {()=><TextForm heading="TextForm" mode={mode} />}/>
+
         </Switch>
           
          
